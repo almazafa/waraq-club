@@ -186,8 +186,7 @@ form.addEventListener('submit', async e => {
   const fields = { name: f.get('name')||'-', town: f.get('town')||'-', contact: f.get('contact')||'-', reads_in: langs, book: f.get('book')||'' };
   const lines = [`ورق club: ${fields.name}`, `Town: ${fields.town}`, `Contact: ${fields.contact}`, `Reads in: ${fields.reads_in}`];
   if (fields.book) lines.push(`A book that changed me: ${fields.book}`);
-  const text = lines.join('
-');
+  const text = lines.join('\n');
   const btn = document.getElementById('submitBtn'); btn.disabled = true; btn.textContent = T[l].sending;
   let ok = false;
   try {
